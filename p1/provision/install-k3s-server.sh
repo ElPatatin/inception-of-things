@@ -6,7 +6,7 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--tls-san 192.168.56.110 --node
 
 # Get join token for worker nodes
 echo "[INFO] Saving K3s join token..."
-sleep 10
+sleep 20
 sudo cat /var/lib/rancher/k3s/server/node-token > /vagrant/node-token
 
 echo "[INFO] K3s server installed successully!"

@@ -3,7 +3,7 @@ set -eux
 
 echo "[INFO] Updating Alpine and installing required packages.."
 apk update
-apk add --no-cache bash curl iptables iptables-openrc openrc eudev cgroup-tools #virtiofsd
+apk add --no-cache bash curl iptables iptables-openrc openrc eudev cgroup-tools
 
 echo "[INFO] Enabling cgroups..."
 # Enable cgroups in boot configurration
