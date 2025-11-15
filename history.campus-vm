@@ -1,0 +1,332 @@
+   0 setup-apkrepos
+   1 vi /etc/apk/repositories 
+   2 apk update
+   3 apk upgrade
+   4 sudo apt install vim tree htop git curl wget
+   5 apk add --no-cache vim tree htop git curl wget
+   6 apk add sudo bash
+   7 visud
+   8 visudo
+   9 apk setup-xorg-base xfce4 lightdm-gtk-greeter xfe4-terminal firefox-esr mousepad
+  10 setup-xorg-base
+  11 setup-xorg-base xfce4 lightdm-gtk-greeter xfce4-terminal firefox-esr moousepad
+  12 setup-xorg-base xfce4 lightdm-gtk-greeter xfce4-terminal firefox-esr mousepad
+  13 rc-update add lightdm
+  14 rc-update add dbus
+  15 rc-service lightdm start
+  16 tree
+  17 mkdir git
+  18 ls -la
+  19 mkdir .ssh
+  20 ssh-keygen
+  21 ls
+  22 ls .ssh/
+  23 rc-service status sshd
+  24 rc-service sshd status
+  25 rc-service sshd
+  26 rc-service sshd status
+  27 rc-service lightdm status
+  28 rc-service list
+  29 apk add qemu qemu-system-x86_64 qemu-img
+  30 apk add qemu-guest-agent qemu-tools
+  31 qemu-system-x86_64 --version
+  32 apk add libvirt libvirt-deamon libvirt-qeu
+  33 apk add libvirt libvirt-daemon libvirt-qemu
+  34 apk add virt-manager virt-viewer
+  35 rc-update libirtd default
+  36 rc-update libvirtd default
+  37 rc-update add libvirtd default
+  38 service libvirtd start
+  39 ls /dev/kvm 
+  40 virsh list --al
+  41 virsh list --all
+  42 virt-host-validate
+  43 apk add virt-install
+  44 apk add bridge-utils dnsmasq iptables
+  45 rc-service libvirtd start
+  46 virsh net-start default
+  47 virst list --all
+  48 virsh list --all
+  49 virsh net-autostart default
+  50 virsh net-define /usr/share/libvirt/networks/default.xml
+  51 mkdir /usr/share/libvirt/netowkrs
+  52 rmdir /usr/share/libvirt/netowkrs
+  53 mkdir /usr/share/libvirt/networks
+  54 virsh net-define /usr/share/libvirt/networks/default.xml
+  55 apk add ruby ruby-dev make gcc g++ libvirt-dev libxml2-dev libxslt-dev
+  56 gem install vagrant
+  57 vagrant plugin install vagrant-libvirt
+  58 apk add libarchive-tools
+  59 mkdir test
+  60 cd test/
+  61 vagrant init generic/alpine319
+  62 vim Vagrantfile 
+  63 vagrant up
+  64 vim Vagrantfile 
+  65 vagrant up
+  66 modprobe tun
+  67 lsmod | grep tun
+  68 mkdir -p /dev/net
+  69 mknod /dev/net/tun c 10 200
+  70 chmod 0666 /dev/net/tun 
+  71 ls -l /dev/net/tun 
+  72 echo "tun" >> /etc/modules
+  73 rc-service libvirtd restart
+  74 virst net-list --all
+  75 virsh net-list --all
+  76 vim Vagrantfile 
+  77 vagrant up --provider=libvirt
+  78 vagrant ssh default
+  79 ls
+  80 vagrant destroy -f
+  81 groups root
+  82 adduser root libvirt 
+  83 adduser root libvirt
+  84 adduser root kvm
+  85 adduser cpeset-c kvm
+  86 adduser cpeset-c libvirt
+  87 vim Ma
+  88 vim Vagrantfile 
+  89 vagrant up
+  90 vagrant ssh node1
+  91 vagrant status
+  92 vagrant status node1
+  93 vagrant destroy -f
+  94 cd
+  95 service status sshd
+  96 service sshd status
+  97 rc-service list
+  98 rc-service -l
+  99 ssh -T git@github.com
+ 100 ip addr
+ 101 sudo vim /etc/ssh/sshd_config
+ 102 service ssh restart
+ 103 service sshd\ restart
+ 104 service sshd restart
+ 105 adduser cpeset-c
+ 106 usermod -aG cpeset-c sudo
+ 107 sudo usermod -aG cpeset-c sudo
+ 108 groups
+ 109 sudo adduser cpeset-c sudo
+ 110 sudo adduser cpeset-c sudoers
+ 111 apk add sudo
+ 112 adduser cpeset-c sudoers
+ 113 adduser cpeset-c sudo
+ 114 adduser cpeset-c libvirt
+ 115 adduser cpeset-c kvm
+ 116 sudo
+ 117 vim /etc/sudo.conf 
+ 118 getend group sudo
+ 119 getent group sudo
+ 120 addgroup sudo
+ 121 getent group sudo
+ 122 sudo visudo
+ 123 adduser alajara-
+ 124 passwd alajara-
+ 125 adduser jareste-
+ 126 groups alajara-
+ 127 root
+ 128 groups root
+ 129 groups cpeset-c
+ 130 adduser cpeset-c sudo
+ 131 adduser cpeset-c daemon sys adm
+ 132 adduser cpeset-c daemon 
+ 133 adduser cpeset-c sys
+ 134 adduser cpeset-c adm
+ 135 adduser alajara- sudo
+ 136 adduser alajara- kvm
+ 137 adduser alajara- libvirt
+ 138 adduser jareste- sudo
+ 139 adduser jareste- kvm
+ 140 adduser jareste- libvirt
+ 141 ls
+ 142 cd /home/cpeset-c/
+ 143 cd git/inception-of-things/p1
+ 144 vagrant up
+ 145 cd
+ 146 poweroff
+ 147 htop
+ 148 cd git/
+ 149 ls
+ 150 mv /home/cpeset-c/.ssh/ ./
+ 151 ls -la
+ 152 mv /home/cpeset-c/git/ ./
+ 153 ls
+ 154 cd
+ 155 ls
+ 156 cd -
+ 157 ls
+ 158 mv git/inception-of-things/ ./
+ 159 ls
+ 160 ls -la
+ 161 mv .ssh/ ../
+ 162 cd ..
+ 163 rm -rf .ssh/
+ 164 cd -
+ 165 rm -rf .ssh/
+ 166 ls
+ 167 ls -la
+ 168 df -h .ssh
+ 169 ls
+ 170 cd ..
+ 171 pwd
+ 172 ls
+ 173 mkdir .ss
+ 174 rmdir .ss
+ 175 mkdir .ssh
+ 176 ls
+ 177 cd .ssh/
+ 178 ssh-keygen -t ed25519 -C "cristobalpes1@gmail.com"
+ 179 eval "$(ssh-agent -s)"
+ 180 ssh-add ~/.ssh/sword
+ 181 cat sword.pub 
+ 182 ssh -T git@github.com
+ 183 git config --global user.name "|ElPatatin"
+ 184 git config --global user.name "ElPatatin"
+ 185 git config --global user.email "cristobalpes1@gmail.com"
+ 186 j
+ 187 cd ..
+ 188 cd git/
+ 189 cd inception-of-things/
+ 190 cd p1
+ 191 vagrant up
+ 192 vagrant status
+ 193 vagrant destroy -f
+ 194 vagrant up
+ 195 vim provision/install-k3s-server.sh 
+ 196 cd ..
+ 197 cd -
+ 198 cat node-token 
+ 199 ls
+ 200 rm -rf node-token 
+ 201 vagrant destroy -f
+ 202 vim -p Vagrantfile provision/*
+ 203 vagrant up
+ 204 ls
+ 205 mkdir shared
+ 206 vagrant up
+ 207 vagrant ssh cpeset-sS
+ 208 vagrant ssh cpeset-cS
+ 209 vim -p Vagrantfile provision/*
+ 210 vagrant destroy -f
+ 211 vagrant up
+ 212 vagrant destroy -f
+ 213 vagrant up
+ 214 vagrant destoy -f
+ 215 vagrant desttoy -f
+ 216 vagrant destroy -f
+ 217 vagrant up
+ 218 vim -p Vagrantfile provision/*
+ 219 ls
+ 220 rm -rf shared/
+ 221 ls
+ 222 vagrant up
+ 223 vagrant provision
+ 224 vagrant destroy -f
+ 225 vagrant up
+ 226 vagrant status
+ 227 vagrant destroy -f
+ 228 cd ..
+ 229 git add .
+ 230 git config ---global --add safe.directory /root/git/inception-of-things/
+ 231 git config --global --add safe.directory /root/git/inception-of-things/
+ 232 git add .
+ 233 git commit -m "Revisions to p1"
+ 234 cd p1
+ 235 vagrant destroy -f
+ 236 ls
+ 237 ls -l
+ 238 ls -la
+ 239 cd ..
+ 240 vim .gitignore
+ 241 git status
+ 242 git show --stat
+ 243 git restore --staged p1/.vagrant/bundler/global.sol 
+ 244 git restore --staged p1/.vagrant/rgloader/loader.rb 
+ 245 git restore --staged p1/node-token 
+ 246 ls
+ 247 git add .
+ 248 git status
+ 249 git commit -m "Revisions of revisions before pushing"
+ 250 git show --stat
+ 251 :q
+ 252 git push
+ 253 git log --oneline --decorate -n 5
+ 254 cd p1
+ 255 rm -rf .vagrant/
+ 256 rm node-token 
+ 257 ls
+ 258 ls -la
+ 259 ls provision/
+ 260 cd ..
+ 261 git add .
+ 262 git commit -m "Revision for the revision of the revisions of p1"
+ 263 git push
+ 264 cd ..
+ 265 cd inception-of-things/
+ 266 cd p
+ 267 cd p2
+ 268 ls -la
+ 269 rm placeholder 
+ 270 vim Vagrantfile
+ 271 more ../p1/Vagrantfile 
+ 272 vim Vagrantfile
+ 273 vagrant up
+ 274 vagrant box lisyt
+ 275 vagrant box list
+ 276 vagrant cloud search alpine
+ 277 cd 
+ 278 ls
+ 279 pwd
+ 280 cd git/
+ 281 ls
+ 282 cd inception-of-things/
+ 283 ls
+ 284 cd p1
+ 285 ls
+ 286 vagrant up
+ 287  vagrant list
+ 288 vagrant status
+ 289 vim Vagrantfile 
+ 290 vagratn destroy -f
+ 291 vagrant destroy -f
+ 292 lss
+ 293 ls
+ 294 ls -la
+ 295 rm -rf .vagrant/ node-token 
+ 296 ls
+ 297 cd ..
+ 298 ls
+ 299 cd p2
+ 300 ls
+ 301 vim Vagrantfile 
+ 302 vagrant cloud search generic/alpine
+ 303 vagrant cloud search alpine
+ 304 vim Vagrantfile 
+ 305 vagrant up
+ 306 cd git/inception-of-things/p2/
+ 307 vagrant box list
+ 308 vagrant box help
+ 309 vagrant box remove albgarci
+ 310 vagrant box -l
+ 311 vagrant box list
+ 312 vagrant box delete albgarci42/alpine-322
+ 313 vagrant box remove albgarci42/alpine-322
+ 314 vagrant box list
+ 315 vagrant box remove albgarci42/alpine-322
+ 316 vagrant box remove "albgarci42/alpine-322"
+ 317 vagrant box prune
+ 318 ls
+ 319 vim Vagrantfile 
+ 320 vagrant up
+ 321 histoy
+ 322 history
+ 323 cd
+ 324 ls -la
+ 325 history
+ 326 ls
+ 327 cd git/I
+ 328 cd git/inception-of-things/
+ 329 ls
+ 330 vim README.md 
+ 331 history > history.campus-vm
