@@ -9,7 +9,7 @@ When creating the machine, configure the following:
 - Minimum 4 cpu cores
 - Minimum 4GB of ram
 - Enable nested virtualization (Nested VT on virtualbox)
-- On network settings, put the network as NAT, and on advanced settings add the following port fowarding rule: TCP, , 2222, , 22.
+- On network settings, put the network as NAT, find port fowarding and add the rule: TCP, , 2222, , 22.
 - After installing and setting up the machine you may need to switch the boot order to make a priority the boot up from the disk.
 
 # Install alpine
@@ -34,7 +34,7 @@ rc-service zram-init start
 
 # A graphical interface because the subjects says so…
 This good man may be the only one with a simple enough [guide](https://breder.org/alpine-setup) and actually funcional one at that on how to install a lightweight GUI on alpine.  
-Basically at this point you want to install these packaged: `apk add --no-cache setup-xorg-base xfce4 lightdm-gtk-greeter xfce4-terminal firefox-esr mousepad`.  
+Basically at this point you want to install these packaged: `setup-xorg-base xfce4 lightdm-gtk-greeter xfce4-terminal librewolf mousepad`.  
 After this, add the service and start the GUI with `rc-update add lightdm` `rc-update add dbus` and start it `rc-sercice lightdm start`. (It should be now always start with a GUI on noot up).
 
 # Can we start the project?
@@ -49,13 +49,12 @@ Lets follow [this](https://krython.com/post/installing-virtualization-software) 
     - Check if it was installed correctly with `qemu-system-x86_64 --version`.
 - `apk add --no-cache libvirt libvirt-daemon libvirt-qemu virt-install virt-manager virt-viewer bridge-utils dnsmasq iptables`.
 - Add the services:
-    - `rc-update libvirtd default`.
     - `rc-update add libvirtd default`.
-    - Start it `service libvirtd start`.
+    - `service libvirtd start`.
 - Add vagrant for p1 and p2: `apk add --no-cache ruby ruby-dev make gcc g++ libvirt-dev libxml2-dev libxslt-dev libarchive-tools`.
-- Run `gem install vagrant' and 'vagrant plugin install vagrant-libvirt`.
+- Run `gem install vagrant` and `vagrant plugin install vagrant-libvirt`.
 - At this point we must add the necessary kernel modules for everything to work with `modprobe tun`
-    - If it does not work, run the follwwing:
+    - If it does not work after starting your vagrant project, run the follwwing:
 ```bash
 lsmod | grep tun
 mkdir -p /dev/net
