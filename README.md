@@ -1,10 +1,10 @@
 # inception-of-things
 Yes, kubernetes are a thing.
-### Fuck 42 Computers
+### Fuck 42BCN Computers
 
 # Pre-requisits
-Setup an alpine 3.22 machine for Inception of Things
-Download the iso from 'https://alpinelinux.or/downloads' the x86_64 version
+Setup an alpine 3.22 (current latest stable alpine version) machine for Inception of Things.
+Download the iso from [the alpine website](https://alpinelinux.or/downloads) the x86_64 version. ([Direct Link](https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/x86_64/alpine-standard-3.22.2-x86_64.iso))
 When creating the machine, configure the following:
 - Minimum 4 cpu cores
 - Minimum 4GB of ram
@@ -13,7 +13,7 @@ When creating the machine, configure the following:
 - After installing and setting up the machine you may need to switch the boot order to make a priority the boot up from the disk.
 
 # Install alpine
-Install alpine with setup-alpine.
+Install alpine with `setup-alpine`.
 No need to create a new user when prompted, with root we are all ready and setup. Most of the questions prompted are default options, just keep pressing enter and read carefully, as an example read when setting up the network interface and when looking for repositories. When prompted about the disk, select the default disk "sda", set it up as "sys" and say yes when prompted to format it.
 
 # Finally, we beging.
