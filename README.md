@@ -20,7 +20,7 @@ No need to create a new user when prompted, with root we are already set; make s
 Start by setting up the repositories file by editing the '/etc/apk/repositories' and add the comunity ones. And don't forget to update the system with 'apk update && apl upgrade'.  
 Install basic dependencies that you like: vim, tree, htop, git, curl, wget… with `apk add --no-cache <package>`.  
 You can do it now or later, by its easier now, lets set up your ssh. It should work out of the box. On you host machine connect to the vm with `ssh root@localhost -p 2222`. If prompted with errors, try to resolve it with `ssh -keygen -f "/home/$USER/.ssh/known_hosts" -R "[localhost]:2222"`.  
-Lets add our ssh for the vm to github. Create the ssh key with `ssh-keygen -t ed25519 -C "<your_email>"`. Add the key with the following `eval "$(ssh-agent -s)"` and `ssh-add ~/.ssh/id_ed25519.pub`. Config your info with `git config --global user.name and user.email`. Once you copied your ssh public key (without the email) try running `ssh -T git@github.com` to see if you github ssh was configured succesfully.  
+Lets add our ssh for the vm to github. Create the ssh key with `ssh-keygen -t ed25519 -f "/path/to/file.ssh/<filename>" -C "<your_email>"`. Add the key with the following `eval "$(ssh-agent -s)"` and `ssh-add ~/.ssh/<filename>`. Config your info with `git config --global user.name and user.email`. Once you copied your ssh public key (without the email) try running `ssh -T git@github.com` to see if you github ssh was configured succesfully.  
 Add this point you may also want to look how to optimize the memory ussage and swapfile  of your machine. ex:
 - Dissable unnecessary sevices:
     - `rc-status` and `rc-update` to check the services
