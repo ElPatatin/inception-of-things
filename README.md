@@ -38,29 +38,32 @@ Basically at this point you want to install these packaged: `apk add --no-cache 
 After this, add the service and start the GUI with `rc-update add lightdm` `rc-update add dbus` and start it `rc-sercice lightdm start`. (It should be now always start with a GUI on noot up).
 
 # Can we start the project?
-No
+No  
 
 
 
-We need to install a virtualizer and hypervisor (which is kinda the same). But this is more for the part one config so yes, we technically start it.
-
-Lets follow this to install the packages necessary for virtualization using qemu and libvir: 'https://krython.com/post/installing-virtualization-software'
-
-'apk add --no-cache qemu qemu-system-x86_64 qemu-img qemu-guest-agent qemu-tools'
-Check if it was installed correctly with 'qemu-system-x86_64 --version'
-'apk add --no-cache libvirt libvirt-daemon libvirt-qemu virt-install virt-manager virt-viewer bridge-utils dnsmasq iptables'
-Add the services:
-'rc-update libvirtd default' and 'rc-update add libvirtd default'. Start it 'service libvirtd start'
-Add vagrant for p1 and p2.
-'apk add --no-cache ruby ruby-dev make gcc g++ libvirt-dev libxml2-dev libxslt-dev libarchive-tools'
-And run 'gem install vagrant' and 'vagrant plugin install vagrant-libvirt'.
-We must at this point add the necessary kernel modules for everything to work ' modprobe tun'
-If it does not work, run the follwwing: 'lsmod | grep tun
+We need to install a virtualizer and hypervisor (which is kinda the same). But this is more for the part one config so yes, we technically start it.  
+  
+Lets follow [this](https://krython.com/post/installing-virtualization-software) to install the packages necessary for virtualization using qemu and libvir:
+- `apk add --no-cache qemu qemu-system-x86_64 qemu-img qemu-guest-agent qemu-tools`.
+    - Check if it was installed correctly with `qemu-system-x86_64 --version`.
+- `apk add --no-cache libvirt libvirt-daemon libvirt-qemu virt-install virt-manager virt-viewer bridge-utils dnsmasq iptables`.
+- Add the services:
+    - `rc-update libvirtd default`.
+    - `rc-update add libvirtd default`.
+    - Start it `service libvirtd start`.
+- Add vagrant for p1 and p2: `apk add --no-cache ruby ruby-dev make gcc g++ libvirt-dev libxml2-dev libxslt-dev libarchive-tools`.
+- Run `gem install vagrant' and 'vagrant plugin install vagrant-libvirt`.
+- At this point we must add the necessary kernel modules for everything to work with `modprobe tun`
+    - If it does not work, run the follwwing:
+```bash
+lsmod | grep tun
 mkdir -p /dev/net
 mknod /dev/net/tun c 10 200
 chmod 0666 /dev/net/tun
 echo "tun" >> /etc/modules
-rc-service libvirtd restart'
+rc-service libvirtd restart
+```
 
 # Should I ask??
 At this point we should have everything necessary to work at least on p1 and p2.
