@@ -32,7 +32,7 @@ rc-update add zram-init
 rc-service zram-init start
 ```
 
-# A grphical interface because the subjects says so…
+# A graphical interface because the subjects says so…
 This good man may be the only one with a simple enough [guide](https://breder.org/alpine-setup) and actually funcional one at that on how to install a lightweight GUI on alpine.  
 Basically at this point you want to install these packaged: `apk add --no-cache setup-xorg-base xfce4 lightdm-gtk-greeter xfce4-terminal firefox-esr mousepad`.  
 After this, add the service and start the GUI with `rc-update add lightdm` `rc-update add dbus` and start it `rc-sercice lightdm start`. (It should be now always start with a GUI on noot up).
